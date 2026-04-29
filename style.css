@@ -26,6 +26,16 @@ header {
     text-align: center;
 }
 
+.branch-banner {
+    background-color: #ff6b35;
+    color: white;
+    padding: 8px 0;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 header h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
@@ -43,12 +53,21 @@ header h1 {
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .nav-list {
     display: flex;
     list-style: none;
     gap: 30px;
+    margin: 0;
 }
 
 .nav-list a {
@@ -57,27 +76,97 @@ header h1 {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: 500;
 }
 
-.nav-list a:hover {
+.nav-list a:hover,
+.nav-list a.active {
     color: #00bfff;
 }
 
-/* Main Content */
-main {
-    padding: 40px 0;
-    min-height: calc(100vh - 300px);
-}
-
-.blog-section {
+.search-container {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Blog Post */
-.blog-post {
-    background-color: white;
+.search-input {
+    padding: 8px 12px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    color: white;
+    font-size: 14px;
+    width: 200px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #00bfff;
+}
+
+.search-btn {
+    background-color: #00bfff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #0099cc;
+}
+
+/* Filters Section */
+.filters-section {
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 2px solid #00bfff;
+    background-color: transparent;
+    color: #00bfff;
+    position: relative;
+}
+
+.blog-post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.post-header h2 {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.post-date {
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.post-category {
+    display: inline-block;
+    background-color: #f0f8ff;
+    color: #00bfff;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 600: white;
     padding: 25px;
     border-left: 4px solid #00bfff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -111,13 +200,98 @@ main {
     display: inline-block;
     color: #00bfff;
     text-decoration: none;
-    font-weight: 600;
+    padding: 40px 0 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    color: #00bfff;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    colorcontent {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    .nav-list {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .search-input {
+        width: 150px;
+    }
+
+    .filter-buttons {
+        justify-content: center;
+    }
+
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .post-header h2 {
+        font-size: 1.4em;
+    }
+
+    .blog-post {
+        padding: 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-link {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.2em;
     transition: color 0.3s ease;
 }
 
-.read-more:hover {
-    color: #0099cc;
+.social-link:hover {
+    color: #00bfff;
 }
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #bbb;
+    margin: 0
 
 /* Footer */
 footer {

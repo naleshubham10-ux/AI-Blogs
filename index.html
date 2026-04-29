@@ -9,6 +9,11 @@
 <body>
     <!-- Header -->
     <header>
+        <div class="branch-banner">
+            <div class="container">
+                <span>Feature Branch: feature-header</span>
+            </div>
+        </div>
         <div class="container">
             <h1>Daily AI Blog</h1>
             <p class="tagline">Exploring Artificial Intelligence, One Day at a Time</p>
@@ -18,23 +23,32 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <ul class="nav-list">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#latest">Latest</a></li>
-                <li><a href="#topics">Topics</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
+            <div class="nav-content">
+                <ul class="nav-list">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#latest">Latest</a></li>
+                    <li><a href="#tutorials">Tutorials</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search articles..." class="search-input">
+                    <button type="button" class="search-btn">🔍</button>
+                </div>
+            </div>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="container">
-        <section class="blog-section">
-            <!-- Blog Post 1 -->
-            <article class="blog-post">
+        <!-- Category Filters -->
+        <section class="filters-section">
+            <div class="filter-buttons data-category="generative-ai">
                 <div class="post-header">
                     <h2>Understanding Generative AI: The Future of Content Creation</h2>
                     <p class="post-date">April 29, 2026</p>
+                    <span class="post-category">Generative AI</span>
                 </div>
                 <p class="post-excerpt">
                     Generative AI has revolutionized how we create content. From text generation to image synthesis, learn how large language models and diffusion models are transforming industries worldwide. Discover the technology behind ChatGPT, DALL-E, and other cutting-edge AI tools.
@@ -43,10 +57,11 @@
             </article>
 
             <!-- Blog Post 2 -->
-            <article class="blog-post">
+            <article class="blog-post" data-category="machine-learning">
                 <div class="post-header">
                     <h2>Machine Learning Explained: A Beginner's Guide</h2>
                     <p class="post-date">April 28, 2026</p>
+                    <span class="post-category">Machine Learning</span>
                 </div>
                 <p class="post-excerpt">
                     Confused about machine learning? In this comprehensive guide, we break down the fundamentals of ML algorithms, supervised vs unsupervised learning, and real-world applications. Whether you're a beginner or looking to refresh your knowledge, this post covers it all.
@@ -55,10 +70,11 @@
             </article>
 
             <!-- Blog Post 3 -->
-            <article class="blog-post">
+            <article class="blog-post" data-category="neural-networks">
                 <div class="post-header">
                     <h2>Neural Networks Demystified: From Theory to Practice</h2>
                     <p class="post-date">April 27, 2026</p>
+                    <span class="post-category">Neural Networks</span>
                 </div>
                 <p class="post-excerpt">
                     Neural networks power many of today's AI systems. Explore how artificial neurons work together, understand backpropagation, and learn how deep learning enables computers to recognize patterns in complex data. Code examples included!
@@ -67,10 +83,24 @@
             </article>
 
             <!-- Blog Post 4 -->
-            <article class="blog-post">
+            <article class="blog-post" data-category="ethics">
                 <div class="post-header">
                     <h2>AI Ethics: Building Responsible AI Systems</h2>
                     <p class="post-date">April 26, 2026</p>
+                    <span class="post-category">AI Ethics</span>
+                </div>
+                <p class="post-excerpt">
+                    As AI becomes more prevalent, ethical considerations are crucial. This post discusses bias in AI, fairness, transparency, and accountability. Learn how organizations can build trustworthy AI systems that benefit society.
+                </p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+
+            <!-- Blog Post 5 -->
+            <article class="blog-post" data-category="nlp">
+                <div class="post-header">
+                    <h2>Natural Language Processing: Teaching Machines to Understand Language</h2>
+                    <p class="post-date">April 25, 2026</p>
+                    <span class="post-category">NLP</span>
                 </div>
                 <p class="post-excerpt">
                     As AI becomes more prevalent, ethical considerations are crucial. This post discusses bias in AI, fairness, transparency, and accountability. Learn how organizations can build trustworthy AI systems that benefit society.
@@ -90,11 +120,42 @@
                 <a href="#" class="read-more">Read More →</a>
             </article>
         </section>
-    </main>
+    </main>div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#latest">Latest Posts</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#" onclick="filterPosts('generative-ai')">Generative AI</a></li>
+                        <li><a href="#" onclick="filterPosts('machine-learning')">Machine Learning</a></li>
+                        <li><a href="#" onclick="filterPosts('neural-networks')">Neural Networks</a></li>
+                        <li><a href="#" onclick="filterPosts('ethics')">AI Ethics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <p>Stay updated with the latest AI developments</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📧 Newsletter</a>
+                        <a href="#" class="social-link">🐦 Twitter</a>
+                        <a href="#" class="social-link">💼 LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Daily AI Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
+    <script src="script.js"></script  <div class="container">
             <p>&copy; 2026 Daily AI Blog. All rights reserved.</p>
         </div>
     </footer>
